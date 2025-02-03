@@ -37,11 +37,11 @@ const chartConfig = {
   },
   mobile: {
     label: "Mobile",
-    color: "hsl(var(--chart-2))",
+    color: "#6d28d9",
   },
 } satisfies ChartConfig
 
-export function AreaChart() {
+export function AreaChartInteractive() {
   const [timeRange, setTimeRange] = React.useState("90d")
 
   const filteredData = chartDataArea.filter((item) => {
@@ -59,7 +59,7 @@ export function AreaChart() {
   })
 
   return (
-    <Card>
+    <Card className="flex flex-col h-full  ">
       <CardHeader className="flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row">
         <div className="grid flex-1 gap-1 text-center sm:text-left">
           <CardTitle>Area Chart - Interactive</CardTitle>
@@ -87,10 +87,10 @@ export function AreaChart() {
           </SelectContent>
         </Select>
       </CardHeader>
-      <CardContent className="px-2 pt-4 sm:px-6 sm:pt-6">
+      <CardContent className="px-2 pt-4 h-full sm:px-6 sm:pt-6">
         <ChartContainer
           config={chartConfig}
-          className="aspect-auto h-[250px] w-full"
+          className="aspect-auto h-full w-full"
         >
           <AreaChart data={filteredData}>
             <defs>
