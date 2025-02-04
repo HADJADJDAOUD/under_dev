@@ -1,5 +1,6 @@
 import { AppSidebar } from "@/components/app-sidebar";
 import { AreaChartInteractive } from "@/components/AreaChart";
+import { DataTableDemo } from "@/components/DataTableDemo";
 import { MyChart } from "@/components/MyChart";
 import { RadialChart } from "@/components/RadialChart";
 import {
@@ -65,15 +66,15 @@ export default function Page() {
 
         {currentPath === "/" && (
           <div className="flex flex-1 flex-col h-full gap-4 p-4 pt-0">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-[100%]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-[100%] w-[100%]">
               {/* First row: 3 components with max height */}
               
               <AreaChartInteractive />
-              <MyChart />
+          
 
               {/* Second row: 1 component taking all 3 columns with max height */}
               <div className="col-span-3 h-full  flex-1 rounded-xl bg-muted/50 md:min-h-min ">
-                <MyChart />
+              <DataTableDemo />
               </div>
             </div>
           </div>
