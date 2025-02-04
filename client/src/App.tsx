@@ -1,9 +1,8 @@
-import React from "react";
-import { MyChart } from "./components/MyChart";
+
 import { ThemeProvider } from "@/components/theme-provider";
 
-import { RadialChart } from "./components/RadialChart";
-import { AreaChartInteractive } from "./components/AreaChart";
+
+
 import Page from "./app/dashboard/page";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 export default function App() {
@@ -15,6 +14,8 @@ export default function App() {
        <Route path="/age-of-visitors" element={<Page />} />
           <Route path="/number-of-visitors-area" element={<Page />} />
           <Route path="/number-of-visitors-bar" element={< Page/>} />
+          <Route path="/users" element={< Page/>} />
+          <Route path="/location" element={< Page/>} />
           
       </Routes>
       </Router>

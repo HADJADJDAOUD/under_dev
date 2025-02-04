@@ -53,17 +53,17 @@ export function RadialChart() {
           <CardTitle>the age of visitors </CardTitle>
           <CardDescription>January - June 2024</CardDescription>
         </CardHeader>
-        <CardContent className="flex-1 pb-0">
+        <CardContent className="flex-1 h-full pb-0">
           <ChartContainer
             config={chartConfig}
-            className="mx-auto aspect-square h-full max-w-[400px]"  // Increase size here
+            className="mx-auto relative aspect-square h-[200px] max-w-[400px]"  // Increase size here
           >
             <RadialBarChart
               data={chartDataRadial}
               startAngle={-90}
               endAngle={380}
-              innerRadius={55}  // Increase inner radius
-              outerRadius={145} // Increase outer radius
+              innerRadius={35}  // Increase inner radius
+              outerRadius={105} // Increase outer radius
             >
               <ChartTooltip
                 cursor={false}
@@ -74,7 +74,7 @@ export function RadialChart() {
                   position="insideStart"
                   dataKey="browser"
                   className="fill-white capitalize mix-blend-luminosity"
-                  fontSize={14}  // Increase font size for better readability
+                  fontSize={11}  // Increase font size for better readability
                 />
               </RadialBar>
             </RadialBarChart>

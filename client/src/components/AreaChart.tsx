@@ -59,7 +59,7 @@ export function AreaChartInteractive() {
   })
 
   return (
-    <Card className="flex flex-col h-full  ">
+    <Card className="flex flex-col h-full w-full">  
       <CardHeader className="flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row">
         <div className="grid flex-1 gap-1 text-center sm:text-left">
           <CardTitle>Area Chart - Interactive</CardTitle>
@@ -87,10 +87,10 @@ export function AreaChartInteractive() {
           </SelectContent>
         </Select>
       </CardHeader>
-      <CardContent className="px-2 pt-4 h-full sm:px-6 sm:pt-6">
+      <CardContent className="px-2 pt-4 h-full  sm:px-6 sm:pt-6">
         <ChartContainer
           config={chartConfig}
-          className="aspect-auto h-full w-full"
+          className="aspect-auto h-[150px] lg:h-80 "
         >
           <AreaChart data={filteredData}>
             <defs>

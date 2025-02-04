@@ -1,6 +1,7 @@
 import { AppSidebar } from "@/components/app-sidebar";
 import { AreaChartInteractive } from "@/components/AreaChart";
 import { DataTableDemo } from "@/components/DataTableDemo";
+
 import { MyChart } from "@/components/MyChart";
 import { RadialChart } from "@/components/RadialChart";
 import {
@@ -11,6 +12,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+
 import { Separator } from "@/components/ui/separator";
 import {
   SidebarInset,
@@ -18,7 +20,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { useLocation } from "react-router-dom"; // Import the useLocation hook
-
+import RadarC from "@/components/RadarC";
 export default function Page() {
   const location = useLocation(); // Get the current route path
   const currentPath = location.pathname;
@@ -63,21 +65,44 @@ export default function Page() {
             <MyChart />
           </div>
         )}
+        {currentPath === "/users" && (
+          <div className="  h-full ">
+            <DataTableDemo />
+          </div>
+        )}
+         {currentPath === "/location" && (
+          <div className="  h-full ">
+            <RadarC />
+          </div>
+        )}
+         
 
         {currentPath === "/" && (
           <div className="flex flex-1 flex-col h-full gap-4 p-4 pt-0">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-[100%] w-[100%]">
-              {/* First row: 3 components with max height */}
-              
-              <AreaChartInteractive />
-          
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-full w-full">
+              {/* First row: Components stack on mobile, 3 columns on desktop */}
+              <div className="w-full">
+                <AreaChartInteractive />
+              </div>
+              <div className="w-full">
+                <MyChart />
+              </div>
+              <div className="w-full ">
+              <RadarC />
+              </div>
 
-              {/* Second row: 1 component taking all 3 columns with max height */}
-              <div className="col-span-3 h-full  flex-1 rounded-xl bg-muted/50 md:min-h-min ">
-              <DataTableDemo />
+              {/* Empty div for spacing to maintain structure in desktop view */}
+              <div className="w-full"></div>
+
+              {/* Second row: Full-width component across all columns */}
+              <div className="col-span-1 md:col-span-3 h-full flex-1 rounded-xl bg-muted/50">
+                <DataTableDemo />
+          
               </div>
             </div>
+         
           </div>
+       
         )}
       </SidebarInset>
     </SidebarProvider>

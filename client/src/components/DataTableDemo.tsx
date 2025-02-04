@@ -198,7 +198,7 @@ export function DataTableDemo() {
   return (
     <div className="w-full bg-black">
       <div className="flex items-center py-4">
-        <div><span className="ml-4 mr-4 font-bold">Users-table</span></div>
+        <div className="ml-4 mr-4 text-xs lg:text-lg font-bold"><span >Users-table</span></div>
         <Input
           placeholder="Filter emails..."
           value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
