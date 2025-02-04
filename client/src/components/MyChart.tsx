@@ -80,7 +80,7 @@ export function MyChart() {
       <CardContent className="px-2 h-full sm:p-6">
         <ChartContainer
           config={chartConfig}
-          className="aspect-auto h-full w-full"
+          className="aspect-auto h-[150px] lg:h-[250px] w-full"
         >
           <BarChart
             accessibilityLayer
